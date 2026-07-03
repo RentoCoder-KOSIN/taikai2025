@@ -1,68 +1,220 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+  color: #333;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  width: 500px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+h1 { font-size: 20px; font-weight: 700; }
+h2 { font-size: 18px; font-weight: 600; }
+h3 { font-size: 16px; font-weight: 600; }
+
+a { text-decoration: none; color: inherit; }
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  background: white;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+/* ヘッダー */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.btn-primary {
+  background: #e74c3c;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.btn-secondary {
+  background: #eee;
+  color: #333;
+}
+
+/* 検索 */
+.search-box {
+  margin-bottom: 12px;
+}
+
+/* カテゴリタブ */
+.tab-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.tab {
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #eee;
+  color: #666;
+  font-size: 13px;
+}
+
+.tab.active {
+  background: #e74c3c;
+  color: white;
+}
+
+/* 並び替え */
+.sort-list {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.sort-btn {
+  background: none;
+  border: 1px solid #ddd;
+  color: #666;
+  font-size: 13px;
+}
+
+.sort-btn.active {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+/* 投稿カード */
+.post-card {
+  background: white;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.post-category {
+  font-size: 11px;
+  background: #fdecea;
+  color: #e74c3c;
+  padding: 2px 8px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.post-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.post-meta {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.post-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 8px;
+  object-fit: cover;
+  max-height: 200px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  padding: 40px 0;
+}
+
+/* 詳細ページ */
+.detail-card {
+  background: white;
+  border-radius: 12px;
+  padding: 16px;
+  margin-top: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.post-content {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.comment-card {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin-top: 8px;
+}
+
+.comment-author {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.comment-content {
+  font-size: 13px;
+  color: #666;
+}
+
+/* フォーム */
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #555;
+}
+
+.btn-submit {
+  width: 100%;
+  background: #e74c3c;
+  color: white;
+  padding: 12px;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.btn-submit:disabled {
+  background: #ccc;
+  cursor: not-allowed;
 }
